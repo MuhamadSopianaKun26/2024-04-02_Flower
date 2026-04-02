@@ -77,14 +77,14 @@
             ],
             "correct_answer": "bebe",
             "on_correct_talk": [
-                "Hmmm... benar...",
-                "tapi belum cukup, kita lanjut"
+                "Hmmm... bener sihh...",
+                "tapi belum cukup, masih mencurigakan. kita lanjut test nya!"
             ],
             "on_correct_step": "test_gambar_fish",
             "on_wrong": {
                 "texts": [
                     "SALAH!!!",
-                    "DASAR PENYUSUP!!!!!"
+                    "TERCIDUK PENYUSUP!!!!!"
                 ],
                 "gif": "angry",
                 "retry_label": "Jawab lagi"
@@ -115,15 +115,17 @@
             ],
             "correct_id": "img4",
             "on_correct_talk": [
-                "BETULLLLL....",
+                "IHHHH BETULLLLL....",
                 "kok bisa tau sih!",
-                "masih belum selesai, lanjutkan!"
+                "Iya sih, fish mana lagi coba yang secantik itu😃",
+                "masih belum selesai, lanjutkan!😡"
             ],
             "on_correct_step": "tanya_nama_kucing",
             "on_wrong": {
                 "texts": [
                     "SALAH!!!",
-                    "DASAR PENYUSUP!!!!!"
+                    "GITU DOANG GABISA!!!!!",
+                    "JELAS GITU PADAHAL PALING CANTIK..."
                 ],
                 "gif": "angry"
             }
@@ -138,14 +140,16 @@
                 "paw"
             ],
             "on_correct_talk": [
-                "Wih benarr",
+                "Wih benarrr......🙀",
                 "kok bisa tau sih??",
-                "tapi test belum selesai!"
+                "Apa ga salah orang ya?",
+                "test lagi deh ya...",
+                "Yang sekarnag pasti susah, cuma bebe company yang tau!!😠"
             ],
             "on_correct_step": "quiz_pasukan_bebe",
             "on_wrong": {
                 "texts": [
-                    "SALAH!!!",
+                    "TUH KAN SALAHHH!!!",
                     "DASAR PENYUSUP!!!!!"
                 ],
                 "gif": "angry"
@@ -166,10 +170,11 @@
             ],
             "min_match": 5,
             "on_correct_talk": [
-                "Ihhh kok benar🥹",
-                "klo bener ini kamu, ini test terakhir!!!"
+                "Ihhh kok benar...🥹",
+                "Padahal cuma papah mamah para bebe yang tau soal ini...🥹",
+                "klo bener ini kamu, harus aku test pengetahuan seputar bebe!!!😡"
             ],
-            "on_correct_step": "test_fish_terakhir",
+            "on_correct_step": "bebe_pertama",
             "on_wrong": {
                 "texts": [
                     "SALAH!!!",
@@ -180,9 +185,116 @@
             }
         },
         {
+            "id": "bebe_pertama",
+            "type": "question_choice",
+            "question": "Siapa pasukan bebe paling pertama nemenin kita??",
+            "gif": "upset",
+            "options": [
+                "Bebe kecil",
+                "Bebe bloom",
+                "Bebe Panda",
+                "Bebe flowow"
+            ],
+            "correct_answer": "Bebe kecil",
+            "on_correct_talk": [
+                "Wih bener, hebat banget kamu ya..😅",
+                "kita lanjut, awas aja klo salah"
+            ],
+            "on_correct_step": "bebe_tanaman",
+            "on_wrong": {
+                "texts": [
+                    "SALAH!!!",
+                    "APASIHHHHH!!!!!",
+                    "FIX BUKAN ZIAAAA!!!"
+                ],
+                "gif": "angry"
+            }
+        },
+        {
+            "id": "bebe_tanaman",
+            "type": "question_choice",
+            "question": "Siapa pasukan bebe yang bukan berupa hewan??",
+            "gif": "upset",
+            "options": [
+                "Bebe bloom & bebe kecil",
+                "Bebe kecil & bebe pink",
+                "Bebe Pink & bebe brown",
+                "Bebe flowow & bebe bloom"
+            ],
+            "correct_answer": "Bebe flowow & bebe bloom",
+            "on_correct_talk": [
+                "Busetttt, bener lagi dong..😅",
+                "masih lanjut ya!!!"
+            ],
+            "on_correct_step": "bebe_air",
+            "on_wrong": {
+                "texts": [
+                    "Masa ga tau sih??!!!🤨",
+                    "Oon banget!!!!!",
+                    "awas kklo salah lagi!!!"
+                ],
+                "gif": "angry"
+            }
+        },
+        {
+            "id": "bebe_air",
+            "type": "question_choice",
+            "question": "Siapa nama bebe bebe yang berasal dari air??",
+            "gif": "upset",
+            "options": [
+                "Bebe pish",
+                "Bebe fizhs",
+                "Bebe vish",
+                "Bebe vizsh & bebe fyshh"
+            ],
+            "correct_answer": "Bebe vizsh & bebe fyshh",
+            "on_correct_talk": [
+                "HAHAHAHA BENER DONG..😅",
+                "Sekarang pertanyaan pasukan bebe terakhir, paling susah....!!!",
+                "Siap-siap ya, ini susah banget. klo salah, kamu gagal test!!"
+            ],
+            "on_correct_step": "bebe_last",
+            "on_wrong": {
+                "texts": [
+                    "ah kan, ga kenal sama mereka!!!",
+                    "ngeja gitu aja ga bisa, oon!!!!!"
+                ],
+                "gif": "upset"
+            }
+        },
+        {
+            "id": "bebe_last",
+            "type": "question_choice",
+            "question": "Siapa bebe yang paling cantik dan paling ganteng, saling sayang satu sama lain, dan bikin salting orang lain??",
+            "gif": "shy",
+            "options": [
+                "Bebe Zia & bebe Argi",
+                "Bebe sarah & bebe Pondra",
+                "Bebe Zahira & bebe Sarah",
+                "Bebe Zahira & bebe Gisel"
+            ],
+            "correct_answer": "Bebe Zia & bebe Argi",
+            "on_correct_talk": [
+                "HEHEHEHEHEHEHE..😆",
+                "HEHEHEHHEHEHEHEHEHEHE..😆",
+                "HEHEHEHEHHEHEHEHEHEHEHE..😆",
+                "Pertanyaan terakhir ya!!!! Awas ini susah juga, jagan salah!!!"
+            ],
+            "on_correct_step": "test_fish_terakhir",
+            "on_wrong": {
+                "texts": [
+                    "KONTOL!!!😡😡",
+                    "KONTOL LU!!!!!😡😡",
+                    "KAREP AH!!!😡😡"
+                ],
+                "gif": "angry"
+            }
+        },
+        {
             "id": "test_fish_terakhir",
             "type": "question_image",
             "question": "Mana fish yang paling cantik, manis, imut, lucu, gemash, dan mempesona?",
+            "gif": "shy",
             "images": [
                 {
                     "id": "img1",
@@ -203,8 +315,8 @@
             ],
             "correct_id": "img2",
             "on_correct_talk": [
-                "Hehe, bener ternyata",
-                "Pasti kamu bebe Zahira yang cantik itu ya???",
+                "Hehe, bener ternyata..😅",
+                "Pasti kamu bebe Zahira yang cantik itu ya???😃🐠",
                 "Maaf ya, aku kira tadi penyusup, makannya banyak test dulu",
                 "Sebelum lanjut, ada pertanyaan bonus dulu nih...",
                 "JAWAB YANG BENER YA!!! AWAS KALAU SALAH!!!!😡🤬"
@@ -212,8 +324,8 @@
             "on_correct_step": "bonus_ganteng",
             "on_wrong": {
                 "texts": [
-                    "SALAH!!!",
-                    "DASAR PENYUSUP!!!!!"
+                    "HAHHHHH???!!",
+                    "GITU AJA GA BISA OON!!!!!!"
                 ],
                 "gif": "angry"
             }
@@ -222,6 +334,7 @@
             "id": "bonus_ganteng",
             "type": "question_image",
             "question": "Mana di foto berikut yang paling ganteng dan menggoda!!",
+            "gif": "upset",
             "images": [
                 {
                     "id": "img1",
@@ -245,9 +358,11 @@
             ],
             "on_wrong_talk": [
                 "TAII!!",
+                "PUKIMAK!!!",
                 "A ARGI SEJELEK ITU YA???!!!!!",
                 "BAIKLAH!",
                 "TERNYATA GITU SELAMA INI KAMU MERASA",
+                "oke-oke, jadi sadar diri sekarang...",
                 "yaudah lah, langsung ke intinya aja ya...😒"
             ],
             "next_step": "sesi3_anniversary"
@@ -395,7 +510,7 @@
                 "Kamu buka ya!"
             ],
             "gift_config": {
-                "clicks_required": 5,
+                "clicks_required": 30,
                 "final_message": "Ini ada bunga buat kamu hehehe..",
                 "sub_message": "Semoga kamu suka ya sayang",
                 "button_label": "Tekan untuk menerima bunga"

@@ -309,13 +309,32 @@ export default function AnniversaryApp() {
 
     const handleGiftClick = () => {
         playPop();
-        if (giftClicks < 4) {
+        const clicksRequired = (step as any).gift_config?.clicks_required || 30;
+        if (giftClicks < clicksRequired - 1) {
             setGiftClicks(c => c + 1);
         } else {
             setGiftExploded(true);
             fireConfetti();
         }
     };
+
+    // Play ninaBobo.mp3 when gift is opened
+    useEffect(() => {
+        if (giftExploded && phase === 'gift_interaction') {
+            // Stop current BGM if playing
+            if (bgmRef.current) {
+                bgmRef.current.pause();
+                bgmRef.current.currentTime = 0;
+            }
+            // Play ninaBobo.mp3
+            const ninaBoboAudio = new Audio('/assets/audio/ninaBobo.mp3');
+            ninaBoboAudio.volume = 0.7;
+            ninaBoboAudio.loop = true;
+            ninaBoboAudio.play().catch(() => console.log('Nina Bobo audio block'));
+            // Store in bgmRef so it can be controlled later if needed
+            bgmRef.current = ninaBoboAudio;
+        }
+    }, [giftExploded, phase]);
 
     // Render elements based on phase/step
     if (!step) return null;
@@ -466,7 +485,7 @@ export default function AnniversaryApp() {
                                         {step.type === 'question_choice' && (
                                             <div className="flex flex-col gap-3 w-full">
                                                 {((step as any).options as string[]).map((opt, i) => (
-                                                    <button key={i} className="option-button" onClick={() => handleChoice(opt === (step as any).correct_answer)}>
+                                                    <button key={i} className="option-button" onClick={() => handleChoice(opt === (step as any).correct_answer || opt === (step as any).correct_option)}>
                                                         {opt}
                                                     </button>
                                                 ))}
@@ -555,34 +574,22 @@ export default function AnniversaryApp() {
                                     >
                                         {!giftExploded ? (
                                             <>
-                                                <p className="text-pink-500 font-bold mb-8 animate-pulse text-lg">Tap kado nya {5 - giftClicks}x !!</p>
+                                                <p className="text-pink-500 font-bold mb-8 animate-pulse text-lg">tap hadiah sebanyak-banyak nya!</p>
                                                 <motion.div
-                                                    className="w-64 h-64 md:w-72 md:h-72 cursor-pointer relative mt-4 mb-4"
+                                                    className="cursor-pointer relative mt-4 mb-4 select-none"
                                                     animate={{
-                                                        scale: 1 + (giftClicks * 0.1),
+                                                        scale: 1 + (giftClicks * 0.05),
                                                         rotate: giftClicks > 0 ? [-5, 5, -5, 0] : 0,
-                                                        boxShadow: `0px 0px ${giftClicks * 25}px ${giftClicks * 8}px rgba(255, 235, 133, ${0.4 + giftClicks * 0.15})`
+                                                        filter: `drop-shadow(0px 0px ${giftClicks * 15}px rgba(255, 215, 0, ${0.3 + giftClicks * 0.02}))`
                                                     }}
                                                     transition={{
                                                         scale: { type: "spring", stiffness: 300 },
                                                         rotate: { type: "tween", duration: 0.3 },
-                                                        boxShadow: { duration: 0.3 }
+                                                        filter: { duration: 0.3 }
                                                     }}
                                                     onClick={handleGiftClick}
                                                 >
-                                                    {/* Beautiful CSS Birthday Gift Box */}
-                                                    <div className="absolute inset-0 bg-rose-300 rounded-2xl shadow-inner border-[6px] border-rose-400 flex items-center justify-center overflow-visible">
-                                                        {/* Pita Vertikal */}
-                                                        <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-10 bg-rose-500 shadow-sm z-10 border-x-2 border-rose-600" />
-                                                        {/* Pita Horizontal */}
-                                                        <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-10 bg-rose-500 shadow-sm z-10 border-y-2 border-rose-600" />
-                                                        {/* Tali Pita Atas (Bow) */}
-                                                        <div className="absolute -top-16 left-1/2 -translate-x-1/2 flex justify-center w-full z-20">
-                                                            <div className="w-16 h-20 bg-rose-500 rounded-full scale-x-[1.8] rotate-[-40deg] origin-bottom-right relative left-2 border-[4px] border-rose-600 shadow-sm" />
-                                                            <div className="w-16 h-20 bg-rose-500 rounded-full scale-x-[1.8] rotate-[40deg] origin-bottom-left relative right-2 border-[4px] border-rose-600 shadow-sm" />
-                                                            <div className="w-10 h-10 bg-rose-700 rounded-full absolute -bottom-4 z-30 shadow-md transform -translate-x-1/2 left-1/2 border-[3px] border-rose-800" />
-                                                        </div>
-                                                    </div>
+                                                    <span className="text-[12rem] md:text-[16rem] leading-none">🎁</span>
                                                 </motion.div>
                                             </>
                                         ) : (
