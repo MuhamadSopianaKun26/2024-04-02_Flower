@@ -173,7 +173,7 @@
             "on_wrong": {
                 "texts": [
                     "SALAH!!!",
-                    "DASAR PENYUSUP!!!!!",
+                    "HARUS LENGKAP!!!!!",
                     "salah satunya ada Bebe Flowow, dan bebe bloom!!!"
                 ],
                 "gif": "angry"
@@ -233,7 +233,7 @@
                 },
                 {
                     "id": "img3",
-                    "url": "/assets/image/argi.jpeg"
+                    "url": "/assets/image/argi.jpg"
                 }
             ],
             "correct_id": "img3",
