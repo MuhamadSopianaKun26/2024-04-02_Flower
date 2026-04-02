@@ -361,7 +361,7 @@ export default function AnniversaryApp() {
                             className="content-card flex flex-col items-center justify-center text-center p-8 border-none bg-black/80 shadow-[0_0_50px_rgba(255,105,180,0.4)]"
                         >
                             {step.gif && <img src={getGifPath(step.gif)} alt="Cat" className="cat-gif mb-6" />}
-                            <h1 className="text-pink-300 text-xs md:text-sm font-semibold leading-relaxed mb-6 mt-2 text-shadow-soft drop-shadow-[0_0_10px_rgba(255,182,193,0.8)] px-4">
+                            <h1 className="text-pink-200 text-[1.1rem] md:text-xs font-semibold leading-relaxed mb-6 mt-2 text-shadow-soft drop-shadow-[0_0_10px_rgba(255,182,193,0.8)] px-4">
                                 {displayedText}
                             </h1>
                             <p className="text-pink-200 text-sm font-light mt-auto">{(step as any).footer}</p>
