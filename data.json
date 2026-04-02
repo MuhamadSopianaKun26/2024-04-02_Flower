@@ -242,9 +242,9 @@
             "question": "Siapa nama bebe bebe yang berasal dari air??",
             "gif": "upset",
             "options": [
-                "Bebe pish",
-                "Bebe fizhs",
-                "Bebe vish",
+                "Bebe pish & bebe fiszh",
+                "Bebe fizhs & bebe fiys",
+                "Bebe vish & fish",
                 "Bebe vizsh & bebe fyshh"
             ],
             "correct_answer": "Bebe vizsh & bebe fyshh",
@@ -280,7 +280,7 @@
                 "HEHEHEHEHHEHEHEHEHEHEHE..😆",
                 "Pertanyaan terakhir ya!!!! Awas ini susah juga, jagan salah!!!"
             ],
-            "on_correct_step": "test_fish_terakhir",
+            "on_correct_step": "bonus_sayang_terindah",
             "on_wrong": {
                 "texts": [
                     "KONTOL!!!😡😡",
@@ -289,6 +289,37 @@
                 ],
                 "gif": "angry"
             }
+        },
+        {
+            "id": "bonus_sayang_terindah",
+            "type": "question_image",
+            "question": "Mana Orang yang paling disayang dan Cinta sepenuh hati oleh A Argi!!",
+            "gif": "shy",
+            "images": [
+                {
+                    "id": "imgBebe1",
+                    "url": "/assets/image/bebe1.jpg"
+                },
+                {
+                    "id": "imgBebe2",
+                    "url": "/assets/image/bebe2.jpg"
+                },
+                {
+                    "id": "imgBebe3",
+                    "url": "/assets/image/bebe3.jpg"
+                },
+                {
+                    "id": "imgBebe4",
+                    "url": "/assets/image/bebe4.jpg"
+                }
+            ],
+            "correct_id": ["imgBebe1","imgBebe2","imgBebe3","imgBebe4"],
+            "on_correct_talk": [
+                "Hehehe Jawbannya betul semua!!!!!",
+                "Lanjut Ya...."
+            ],
+            "on_wrong_talk": [],
+            "next_step": "test_fish_terakhir"
         },
         {
             "id": "test_fish_terakhir",

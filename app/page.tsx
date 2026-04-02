@@ -510,7 +510,13 @@ export default function AnniversaryApp() {
                                                     <button
                                                         key={i}
                                                         className="relative group bg-pink-50 p-2 rounded-2xl border-4 border-transparent hover:border-pink-300 transition-all shadow-md hover:shadow-xl overflow-hidden aspect-square flex items-center justify-center"
-                                                        onClick={() => handleChoice(img.id === (step as any).correct_id)}
+                                                        onClick={() => {
+                                                            const correctId = (step as any).correct_id;
+                                                            const isCorrect = Array.isArray(correctId) 
+                                                                ? correctId.includes(img.id) 
+                                                                : img.id === correctId;
+                                                            handleChoice(isCorrect);
+                                                        }}
                                                     >
                                                         <img src={img.url.startsWith('/') ? img.url : `/assets/image/${img.url}`} alt={`Opt ${i}`} className="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform" />
                                                     </button>
