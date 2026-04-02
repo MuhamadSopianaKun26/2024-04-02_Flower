@@ -642,7 +642,7 @@ export default function AnniversaryApp() {
                 <div className="flex flex-wrap justify-center bg-white/70 p-2.5 rounded-3xl backdrop-blur-md shadow-[0_8px_20px_rgba(255,182,193,0.6)] border-pink-200 pointer-events-auto gap-2">
                     <button className="bg-[linear-gradient(135deg,#ff9a9e_0%,#fecfef_100%)] text-[#c9184a] px-3 py-1.5 text-[0.6rem] hover:scale-105 transition-transform" onClick={(e) => { playPop(); advanceStep('intro_1'); }}>Restart</button>
                     <button className="bg-[linear-gradient(135deg,#ff9a9e_0%,#fecfef_100%)] text-[#c9184a] px-3 py-1.5 text-[0.6rem] hover:scale-105 transition-transform" onClick={(e) => { playPop(); advanceStep('cek_kesiapan'); }}>Test</button>
-                    <button className="bg-[linear-gradient(135deg,#ff9a9e_0%,#fecfef_100%)] text-[#c9184a] px-3 py-1.5 text-[0.6rem] hover:scale-105 transition-transform" onClick={(e) => { playPop(); advanceStep('ucapan_utama'); }}>Ucapan</button>
+                    <button className="bg-[linear-gradient(135deg,#ff9a9e_0%,#fecfef_100%)] text-[#c9184a] px-3 py-1.5 text-[0.6rem] hover:scale-105 transition-transform" onClick={(e) => { playPop(); advanceStep('sesi3_anniversary'); }}>Ucapan</button>
                     <button className="bg-[linear-gradient(135deg,#ff9a9e_0%,#fecfef_100%)] text-[#c9184a] px-3 py-1.5 text-[0.6rem] hover:scale-105 transition-transform" onClick={(e) => { playPop(); advanceStep('sesi4_gift'); }}>Gift</button>
                 </div>
             </div>
