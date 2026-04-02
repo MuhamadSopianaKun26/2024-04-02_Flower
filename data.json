@@ -401,7 +401,7 @@
         {
             "id": "sesi3_anniversary",
             "type": "special_transition",
-            "wait_time": 40000,
+            "wait_time": 5000,
             "gif": "yapapa",
             "sfx": "sound_sesi3.mp3",
             "next_step": "ucapan_utama"
