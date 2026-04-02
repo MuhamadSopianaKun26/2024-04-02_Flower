@@ -1,0 +1,420 @@
+{
+    "config": {
+        "theme": "pink-white",
+        "owner_name": "Argi",
+        "partner_name": "Zahira",
+        "anniversary_date": "02 April 2026"
+    },
+    "storyline": [
+        {
+            "id": "intro_1",
+            "type": "talking",
+            "gif": "angry",
+            "texts": [
+                "HEI!!!",
+                "KOK KAMU BISA MASUK KE SINI!!!",
+                "LINK INI SPESIAL UNTUK PEREMPUAN TERIMUT, TERMANIS, TERLUCU, TERCANTIK, DAN PALING MENGGEMASKAN DIDUNIA!",
+                "KAMU PENYUSUP YA??!"
+            ],
+            "next_step": "tanya_nama_pengirim"
+        },
+        {
+            "id": "tanya_nama_pengirim",
+            "type": "question_input",
+            "question": "DARI MANA KAMU MENDAPATKAN LINK?!",
+            "placeholder": "sebutkan nama panggilan pengirim link...",
+            "gif": "angry",
+            "valid_answers": [
+                "argi",
+                "a argi",
+                "bebe argi",
+                "bebe"
+            ],
+            "on_correct": "sesi2_start",
+            "on_wrong": {
+                "texts": [
+                    "JAWABAN MU SALAHHHH!!!",
+                    "KAU PENYUSUP YA!!!!",
+                    "KELUAR DARI SINI!!!"
+                ],
+                "gif": "angry",
+                "retry_label": "Coba jawab lagi"
+            }
+        },
+        {
+            "id": "sesi2_start",
+            "type": "talking",
+            "gif": "huh",
+            "texts": [
+                "Hmmm.... kok dia bisa ngasih link nya ke kamu...",
+                "TAPI AKU TIDAK PERCAYA KAMU!!!",
+                "KAMU HARUS JAWAB TEST BERIKUT UNTUK MEMBUKTIKAN KAMU MEMANG ORANG YANG DITUJU!"
+            ],
+            "next_step": "cek_kesiapan"
+        },
+        {
+            "id": "cek_kesiapan",
+            "type": "question_button",
+            "question": "Sudah siap dengan test nya??",
+            "gif": "upset",
+            "options": [
+                {
+                    "label": "Ya aku siap!",
+                    "next_step": "mulai_test_1"
+                }
+            ]
+        },
+        {
+            "id": "mulai_test_1",
+            "type": "question_choice",
+            "question": "Apa panggilan favorit Argi ke orang yang paling dia cintai, sayangi, dan kasihi di dunia ini?",
+            "gif": "upset",
+            "options": [
+                "bubub",
+                "ayang",
+                "bebe",
+                "bunda"
+            ],
+            "correct_answer": "bebe",
+            "on_correct_talk": [
+                "Hmmm... benar...",
+                "tapi belum cukup, kita lanjut"
+            ],
+            "on_correct_step": "test_gambar_fish",
+            "on_wrong": {
+                "texts": [
+                    "SALAH!!!",
+                    "DASAR PENYUSUP!!!!!"
+                ],
+                "gif": "angry",
+                "retry_label": "Jawab lagi"
+            }
+        },
+        {
+            "id": "test_gambar_fish",
+            "type": "question_image",
+            "question": "Mana fish yang paling cantik?",
+            "gif": "upset",
+            "images": [
+                {
+                    "id": "img1",
+                    "url": "/assets/image/fish1.jpg"
+                },
+                {
+                    "id": "img2",
+                    "url": "/assets/image/fish2.jpg"
+                },
+                {
+                    "id": "img3",
+                    "url": "/assets/image/fish3.jpg"
+                },
+                {
+                    "id": "img4",
+                    "url": "/assets/image/zia.jpg"
+                }
+            ],
+            "correct_id": "img4",
+            "on_correct_talk": [
+                "BETULLLLL....",
+                "kok bisa tau sih!",
+                "masih belum selesai, lanjutkan!"
+            ],
+            "on_correct_step": "tanya_nama_kucing",
+            "on_wrong": {
+                "texts": [
+                    "SALAH!!!",
+                    "DASAR PENYUSUP!!!!!"
+                ],
+                "gif": "angry"
+            }
+        },
+        {
+            "id": "tanya_nama_kucing",
+            "type": "question_input",
+            "question": "siapa nama salah satu kucing kesayangan a argi!",
+            "placeholder": "sebutkan salah satu nama kucing",
+            "valid_answers": [
+                "meo",
+                "paw"
+            ],
+            "on_correct_talk": [
+                "Wih benarr",
+                "kok bisa tau sih??",
+                "tapi test belum selesai!"
+            ],
+            "on_correct_step": "quiz_pasukan_bebe",
+            "on_wrong": {
+                "texts": [
+                    "SALAH!!!",
+                    "DASAR PENYUSUP!!!!!"
+                ],
+                "gif": "angry"
+            }
+        },
+        {
+            "id": "quiz_pasukan_bebe",
+            "type": "question_input_list",
+            "question": "sebutkan 5 nama pasukan bebe dan anak-anak a argi serta 1 bebe kalung",
+            "sub_text": "contoh : bebe meow, bebe dog, bebe cat, bebe flowow",
+            "required_keywords": [
+                "bebe kecil",
+                "bebe panda",
+                "bebe pink",
+                "bebe flowow",
+                "bebe brown",
+                "bebe bloom"
+            ],
+            "min_match": 5,
+            "on_correct_talk": [
+                "Ihhh kok benar🥹",
+                "klo bener ini kamu, ini test terakhir!!!"
+            ],
+            "on_correct_step": "test_fish_terakhir",
+            "on_wrong": {
+                "texts": [
+                    "SALAH!!!",
+                    "DASAR PENYUSUP!!!!!",
+                    "salah satunya ada Bebe Flowow, dan bebe bloom!!!"
+                ],
+                "gif": "angry"
+            }
+        },
+        {
+            "id": "test_fish_terakhir",
+            "type": "question_image",
+            "question": "Mana fish yang paling cantik, manis, imut, lucu, gemash, dan mempesona?",
+            "images": [
+                {
+                    "id": "img1",
+                    "url": "/assets/image/fish1.jpg"
+                },
+                {
+                    "id": "img2",
+                    "url": "/assets/image/zia2.jpg"
+                },
+                {
+                    "id": "img3",
+                    "url": "/assets/image/fish3.jpg"
+                },
+                {
+                    "id": "img4",
+                    "url": "/assets/image/yapapacat.gif"
+                }
+            ],
+            "correct_id": "img2",
+            "on_correct_talk": [
+                "Hehe, bener ternyata",
+                "Pasti kamu bebe Zahira yang cantik itu ya???",
+                "Maaf ya, aku kira tadi penyusup, makannya banyak test dulu",
+                "Sebelum lanjut, ada pertanyaan bonus dulu nih...",
+                "JAWAB YANG BENER YA!!! AWAS KALAU SALAH!!!!😡🤬"
+            ],
+            "on_correct_step": "bonus_ganteng",
+            "on_wrong": {
+                "texts": [
+                    "SALAH!!!",
+                    "DASAR PENYUSUP!!!!!"
+                ],
+                "gif": "angry"
+            }
+        },
+        {
+            "id": "bonus_ganteng",
+            "type": "question_image",
+            "question": "Mana di foto berikut yang paling ganteng dan menggoda!!",
+            "images": [
+                {
+                    "id": "img1",
+                    "url": "/assets/image/sigmaCat1.jpg"
+                },
+                {
+                    "id": "img2",
+                    "url": "/assets/image/sigmaCat2.jpg"
+                },
+                {
+                    "id": "img3",
+                    "url": "/assets/image/argi.jpeg"
+                }
+            ],
+            "correct_id": "img3",
+            "on_correct_talk": [
+                "BENERAN KAH???🥹🥹🥹",
+                "MAKASIH YA....🥹🥹",
+                "Jadi salting...",
+                "kita lanjut ke intinya ya..."
+            ],
+            "on_wrong_talk": [
+                "TAII!!",
+                "A ARGI SEJELEK ITU YA???!!!!!",
+                "BAIKLAH!",
+                "TERNYATA GITU SELAMA INI KAMU MERASA",
+                "yaudah lah, langsung ke intinya aja ya...😒"
+            ],
+            "next_step": "sesi3_anniversary"
+        },
+        {
+            "id": "sesi3_anniversary",
+            "type": "special_transition",
+            "wait_time": 40000,
+            "gif": "yapapa",
+            "sfx": "sound_sesi3.mp3",
+            "next_step": "ucapan_utama"
+        },
+        {
+            "id": "ucapan_utama",
+            "type": "talking_music",
+            "texts": [
+                {
+                    "text": "SELAMAT TANGGAL 2 SAYANG KUUUU!!!!!!! 🎉🥰",
+                    "gif": "happyCat.gif"
+                },
+                {
+                    "text": "HEHEHE AKU SENENG BANGET TAU.... 🤭❤️",
+                    "gif": "yapapacat.gif"
+                },
+                {
+                    "text": "Sebenernya mau ngucapin langsung di call, tapi zia nya udah ngantuk dan tidur... 😴",
+                    "gif": "Shycats.gif"
+                },
+                {
+                    "text": "Maaf ga banyak ya... 🥺",
+                    "gif": "Shycats.gif"
+                },
+                {
+                    "text": "Tapi aku beneran mau ngucapin tulus ke kamu 💖",
+                    "gif": "kiss.gif"
+                },
+                {
+                    "text": "wait hehe, biar romantis kita stell musik ya 🎶",
+                    "gif": "yapapacat.gif"
+                }
+            ],
+            "music_trigger": {
+                "label": "Nyalakan Musik 🎵",
+                "file": "bgm.mp3"
+            },
+            "long_texts": [
+                {
+                    "text": "Selamat tanggal 2 ya sayang ku 💕",
+                    "gif": "happyCat.gif"
+                },
+                {
+                    "text": "makasih tetep mau bertahan sama aku yang menyebalkan dan ga sempurna ini 🥺",
+                    "gif": "crycrying.gif"
+                },
+                {
+                    "text": "makasih tetep sayang tulus dan cinta sepenuh hati sama aku yang penuh kekurangan dan sering kurang bisa nyenengin zia 😭❤️",
+                    "gif": "crycrying.gif"
+                },
+                {
+                    "text": "Maafin aku selalu banyak salah dan sering nyakitin zia ya 😔",
+                    "gif": "Shycats.gif"
+                },
+                {
+                    "text": "Tapi seriusan, aku bener-bener sayang sama kamu 😽💖",
+                    "gif": "kiss.gif"
+                },
+                {
+                    "text": "aku mau berusaha sekuat tenaga meski sakit dan sulit pun 💪",
+                    "gif": "yapapacat.gif"
+                },
+                {
+                    "text": "aku mau berusaha membahagiakan kamu 🥰",
+                    "gif": "happyCat.gif"
+                },
+                {
+                    "text": "membuat kamu nyaman 🛋️",
+                    "gif": "happyCat.gif"
+                },
+                {
+                    "text": "berubah ke arah yang lebih baik demi kamu 🌟",
+                    "gif": "yapapacat.gif"
+                },
+                {
+                    "text": "ngertiin kamu 🫂",
+                    "gif": "Shycats.gif"
+                },
+                {
+                    "text": "supaya kamu bisa terus nyaman dan bahagia karena aku 🥰",
+                    "gif": "happyCat.gif"
+                },
+                {
+                    "text": "dan zia selalu menganggap aku rumah ternyaman yang zia punya 🏡💖",
+                    "gif": "kiss.gif"
+                },
+                {
+                    "text": "dan aku janji sayang 🤞",
+                    "gif": "Shycats.gif"
+                },
+                {
+                    "text": "bahwa aku bakal selalu tulus cinta dan sayang sama kamu 💕",
+                    "gif": "kiss.gif"
+                },
+                {
+                    "text": "selalu peduli dan setia 🛡️❤️",
+                    "gif": "happyCat.gif"
+                },
+                {
+                    "text": "dan gaakan ninggalin atau pun berpaling dari kamu 🥺",
+                    "gif": "crycrying.gif"
+                },
+                {
+                    "text": "jangan khawatir ya sayang 😚",
+                    "gif": "kiss.gif"
+                },
+                {
+                    "text": "aku selalu sayang dan memegang janji-janji aku selama ini 💌",
+                    "gif": "Shycats.gif"
+                },
+                {
+                    "text": "aku bakal berusaha sekuat tenaga untuk mencapai mimpi aku, dan menjadi orang sukses 🚀",
+                    "gif": "yapapacat.gif"
+                },
+                {
+                    "text": "supaya di masa depan nanti ⏳",
+                    "gif": "Shycats.gif"
+                },
+                {
+                    "text": "aku bisa nikahin kamu, dan kita bahagia sembari mewujudkan mimpi-mimpi kita selama ini 💍👰‍♀️",
+                    "gif": "happyCat.gif"
+                },
+                {
+                    "text": "love you sayang ❤️💋",
+                    "gif": "kiss.gif"
+                }
+            ],
+            "animation_on_end": "celebration_party",
+            "next_step": "sesi4_gift"
+        },
+        {
+            "id": "sesi4_gift",
+            "type": "gift_interaction",
+            "texts": [
+                "Maaf ga banyak ya sayang",
+                "tapi aku punya sedikit present buat kamu",
+                "Kamu buka ya!"
+            ],
+            "gift_config": {
+                "clicks_required": 5,
+                "final_message": "Ini ada bunga buat kamu hehehe..",
+                "sub_message": "Semoga kamu suka ya sayang",
+                "button_label": "Tekan untuk menerima bunga"
+            },
+            "next_step": "final_card"
+        },
+        {
+            "id": "final_card",
+            "type": "popup_card",
+            "content": "Buka lemari paket kost kamu yang sebelah ujung, ada sesuatu buat kamu🥰😘",
+            "button_label": "Terima...",
+            "next_step": "closing_screen"
+        },
+        {
+            "id": "closing_screen",
+            "type": "final",
+            "main_text": "Selamat tanggal 2 Zahira ku sayang. aku mau kamu jadi orang yang paling bahagia dan dicintai oleh ku di dunia ini... Aku sangat sayang sama kamu, dan aku mau selalu berusaha lakukan yang terbaik demi kebahagiaan dan kenyamanan kamu, I love you sayang",
+            "footer": "our story - 02 April 2026",
+            "gif": "yapapa"
+        }
+    ]
+}
